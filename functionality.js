@@ -19,19 +19,33 @@
 //   }
 // }
 
+//Don't forget document.ready()!
+
 var category = "world"; //Replace "world" with the category selected in the button
 var url = "https://api.nytimes.com/svc/topstories/v2/"; 
 url += category + '.json?' + $.param({
   'api-key': "49ff125fe406457b9390fdf0225c1a6f"
 });
 
+//Write function that once you click the button to select the category, you empty the contents of the array: .empty();
+
 $.ajax({
   url: url,
   method: 'GET',
-}).done(function(result) {
-  console.log(result);
-  $.each(result.results, function(key, result) {
-  $(".test-list").append("<li>" + "Title: " + result.abstract + " Pic: " + "<br></br>" + "<img src='" + result.multimedia[3].url + "'>" + "</li>");
+}).done(function(data) {
+    
+  console.log(data);
+  $.each(data.results, function(key, article) {
+  $(".test-list").append("<li>" 
+  + "Title: " 
+  + article.abstract 
+  + " Pic: " 
+  + "<br></br>" 
+  + "<img src='" 
+  + article.multimedia[3].url 
+  + "'>" 
+  + "</li>");
+  // Or do something like Contents += "<li>" AND += "Title: " AND += "article.abstract" etc
 })
 
 }).fail(function(err) {

@@ -1,0 +1,26 @@
+{
+  "name": "instanewsapp",
+  "version": "1.0.0",
+  "description": "One page responsive website using NYT API",
+  "main": "functionality.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielKell/InstanewsApp.git"
+  },
+  "author": "Daniel Kell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielKell/InstanewsApp/issues"
+  },
+  "homepage": "https://github.com/DanielKell/InstanewsApp#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
