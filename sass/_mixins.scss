@@ -1,0 +1,23 @@
+// EXAMPLE 1:
+@mixin primary-links {
+   color: blue;
+   text-decoration: none;
+}
+a { @include primary-links; } // use @include to call the mixin
+
+// EXAMPLE 2:
+@mixin secondary-links {
+   a {
+      color: red;
+      text-decoration: none;
+   }
+}
+@include secondary-links;
+
+
+// Set the settings for the desktop @media query here
+@mixin desktop-settings {
+    @media (min-width: 1000px){
+    // width: 100%;
+    }
+}

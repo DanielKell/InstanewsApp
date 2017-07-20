@@ -1,6 +1,14 @@
 
 
 
+
+
+
+
+
+$(document).ready(function(){
+
+
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -22,18 +30,29 @@ window.onclick = function(event) {
   }
 }
 
+
+
 // Triggering button press
 
-  // $('button').on('click', function() {
-  //   event.preventDefault();
-  //   var cattest = $(this);
-  //   console.log('hi');
-  // });
+  $('button').on('click', function() {
+    event.preventDefault();
+    // var cattest = $(this);
+    // console.log('hi');
+    myFunction();
+  });
 
-  $('#testy').on( 'click', function() {
-  event.preventDefault();
-  console.log('hi');
-});
+
+    //Two ways to pull the variable that will be used for generating the link. Can use this.data(name) or this.prop(id)
+  $('.dropdown-content a').on('click', function(){
+    var tmp = $(this).data('name');
+    //var tmp2 = $(this).prop('id');
+    console.log(tmp); 
+  });
+
+//   $('button').on( 'click', function(event) {
+//   event.preventDefault();
+//   console.log('hi');
+// });
 
 
 //Don't forget document.ready()!
@@ -56,12 +75,14 @@ $.ajax({
   $.each(data.results, function(key, article) {
   $('.test-list').append('<li>' 
   + '<div>'
-  + article.abstract 
-  + ' Pic: ' 
-  + '<br></br>' 
+  + '<div class="articlePic">'
   + '<img src="'
-  + article.multimedia[3].url 
+  + article.multimedia[4].url 
   + '">' 
+  + '<p>'
+  + article.abstract
+  + '</p>' 
+  + '</div>'
   + '</div>'
   + '</li>');
   // Or do something like Contents += '<li>' AND += 'Title: ' AND += 'article.abstract' etc
@@ -114,3 +135,5 @@ $.ajax({
 //         })
 //     })
 // }(jQuery);
+
+}); //Ending the document.ready()

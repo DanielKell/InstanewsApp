@@ -1,5 +1,17 @@
+a {
+  color: blue;
+  text-decoration: none; }
+
+a {
+  color: red;
+  text-decoration: none; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 p {
-  color: black; }
+  color: white; }
 
 nav ul {
   margin: 0;
@@ -34,6 +46,9 @@ h1 {
   width: 100%;
   z-index: -2; }
 
+.articlePic {
+  width: 300px; }
+
 /*For the Dropdown Button*/
 /* Dropdown Button */
 .dropbtn {
@@ -56,6 +71,7 @@ h1 {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  margin-left: 100px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;

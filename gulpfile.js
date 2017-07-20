@@ -36,7 +36,7 @@ var uglify = require('gulp-uglify'),
         gulp.watch(["./build/*.js", "index.html"]).on("change", browserSync.reload); //These are the files I'm watching
     });
 
-    //Sass etc
+    //Sass etc on the source file. Output pretty errors, process sass, 
     gulp.task('sass', function() {
          gulp.src('./sass/style.scss')
             .pipe(prettyError())

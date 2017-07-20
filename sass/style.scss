@@ -1,5 +1,15 @@
+@import "variables";
+@import "mixins";
+
+//Import the rest of the partials up here, in the order that Jim slacked out on July 20
+  * {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+
   p {
-    color: black;
+    color: white;
   }
   
   nav ul {
@@ -10,6 +20,7 @@
     display: inline-block; }
 
   body {
+    // max-width: $width;
     background-color: gray;
     color: white; }
 
@@ -32,6 +43,12 @@
   .test-list li div img{
     width: 100%;
     z-index: -2;
+  }
+
+  // For the pulled images
+
+  .articlePic {
+    width: 300px;
   }
 
 /*For the Dropdown Button*/
@@ -61,6 +78,7 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  margin-left: 100px;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
