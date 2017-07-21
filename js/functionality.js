@@ -1,13 +1,5 @@
 
-
-
-
-
-
-
-
 $(document).ready(function(){
-
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
@@ -30,40 +22,31 @@ window.onclick = function(event) {
   }
 }
 
-
-
-// Triggering button press
+// Triggering button press for dropdown menu
 
   $('button').on('click', function() {
     event.preventDefault();
-    // var cattest = $(this);
-    // console.log('hi');
     myFunction();
   });
 
 
-    //Two ways to pull the variable that will be used for generating the link. Can use this.data(name) or this.prop(id)
+
+
+// Declaring the variable that will be changed when a button is selected
+  var newstype = "home";
+
   $('.dropdown-content a').on('click', function(){
-    var tmp = $(this).data('name');
-    //var tmp2 = $(this).prop('id');
-    console.log(tmp); 
-  });
+    // var tmp = $(this).data('name');
+    newstype = $(this).prop('id');
+    console.log(newstype); 
 
-//   $('button').on( 'click', function(event) {
-//   event.preventDefault();
-//   console.log('hi');
-// });
-
-
-//Don't forget document.ready()!
-//Defining variable at the beginning
-var category = 'opinion'; //Replace 'world' with the category selected in the button
 var url = 'https://api.nytimes.com/svc/topstories/v2/'; 
-url += category + '.json?' + $.param({
+url += newstype + '.json?' + $.param({
   'api-key': '49ff125fe406457b9390fdf0225c1a6f'
 });
 
-//Write function that once you click the button to select the category, you empty the contents of the array: .empty();
+//Clear the contents before the data is requested.
+ $('.test-list li').remove();
 
 $.ajax({
   url: url,
@@ -73,15 +56,18 @@ $.ajax({
   console.log(data);
 
   $.each(data.results, function(key, article) {
-  $('.test-list').append('<li>' 
-  + '<div>'
-  + '<div class="articlePic">'
-  + '<img src="'
-  + article.multimedia[4].url 
-  + '">' 
+  $('.test-list').append('<li  a href="' + article.url +'">' 
+  + '<div class="inside-wrapper">'
+  // + '<img src="'
+  // + article.multimedia[4].url //Switch to background image
+  // + '">' 
+  // + '<div>'
+  + '<div class="article" style="background-image:url(' + article.multimedia[4].url + ')">'
+  + '<div class="story-content">'
   + '<p>'
   + article.abstract
-  + '</p>' 
+  + '</p>'
+  + '</div>'
   + '</div>'
   + '</div>'
   + '</li>');
@@ -91,6 +77,13 @@ $.ajax({
 }).fail(function(err) {
   throw err;
 });
+
+  });
+
+
+}); //Ending the document.ready()
+
+//Write function that once you click the button to select the category, you empty the contents of the array: .empty();
 
 // + result.title
 
@@ -136,4 +129,3 @@ $.ajax({
 //     })
 // }(jQuery);
 
-}); //Ending the document.ready()

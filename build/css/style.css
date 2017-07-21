@@ -11,7 +11,10 @@ a {
   box-sizing: border-box; }
 
 p {
-  color: white; }
+  color: white;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 10px; }
 
 nav ul {
   margin: 0;
@@ -22,11 +25,27 @@ nav li {
   display: inline-block; }
 
 body {
-  background-color: gray;
+  max-width: 100%;
+  background-color: black;
   color: white; }
 
 h1 {
   padding-bottom: 50px; }
+
+.test-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.test-list li {
+  max-width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%; }
 
 .test-list li div {
   display: -webkit-box;
@@ -36,15 +55,36 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
   height: 300px;
-  /*background-color: red;*/
-  /*position: absolute;*/ }
+  position: relative;
+  /*background-color: red;*/ }
 
-.test-list li img {
-  /*position: relative;*/ }
+.article {
+  display: block;
+  width: 100%;
+  height: 400px;
+  background-position: 35%;
+  background-size: cover;
+  background-image: url(https://static01.nyt.com/images/2017/07/20/briefing/20eveningss-slide-MA5K/20eveningss-slide-MA5K-superJumbo.jpg); }
+
+.story-content {
+  width: 100%; }
+
+.story-content p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); }
 
 .test-list li div img {
   width: 100%;
   z-index: -2; }
+
+.test-list li div img {
+  width: 100%;
+  z-index: -2; }
+
+.test-list li div div p {
+  position: absolute; }
 
 .articlePic {
   width: 300px; }
