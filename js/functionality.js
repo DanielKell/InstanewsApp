@@ -30,7 +30,9 @@ window.onclick = function(event) {
   });
 
 
-
+//To pull back just 12 items, and skip the ones with no image set up a for loop and check whether 
+// There IS an image (aka it's != null) then proceed and go through the objects. If there is an image
+// increment a counter by 1 and 
 
 // Declaring the variable that will be changed when a button is selected
   var newstype = "home";
@@ -39,6 +41,7 @@ window.onclick = function(event) {
     // var tmp = $(this).data('name');
     newstype = $(this).prop('id');
     console.log(newstype); 
+    $('.loader').show();
 
 var url = 'https://api.nytimes.com/svc/topstories/v2/'; 
 url += newstype + '.json?' + $.param({
@@ -48,15 +51,25 @@ url += newstype + '.json?' + $.param({
 //Clear the contents before the data is requested.
  $('.test-list li').remove();
 
+
 $.ajax({
   url: url,
   method: 'GET',
 }).done(function(data) {
+
+var imagesTrue = data.results.filter(function(imagesFilter) {
+  return imagesFilter.multimedia.length > 0;
+}).slice(0,12); //We are creating a new array that contains only the data for the first 12 items WITH images. 
+  //Filter creates a new array and returns only the values that satisfy the condition. We then slice to 
+  //contain it to the first 12 items, and instead of using data.results in the $.each function, use the new variable.
     
   console.log(data);
 
-  $.each(data.results, function(key, article) {
-  $('.test-list').append('<li  a href="' + article.url +'">' 
+  $.each(imagesTrue, function(key, article) {
+  $('.test-list').append('<li>' 
+  + '<a href="' 
+  + article.url 
+  + '">'
   + '<div class="inside-wrapper">'
   // + '<img src="'
   // + article.multimedia[4].url //Switch to background image
@@ -70,12 +83,15 @@ $.ajax({
   + '</div>'
   + '</div>'
   + '</div>'
+  + '</a>'
   + '</li>');
   // Or do something like Contents += '<li>' AND += 'Title: ' AND += 'article.abstract' etc
 })
 
 }).fail(function(err) {
-  throw err;
+  throw err; //Define what this error is 
+}).always(function() { //Hide the loader button here; show it on the onclick.
+  $('.loader').hide();
 });
 
   });

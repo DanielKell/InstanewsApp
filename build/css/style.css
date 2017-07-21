@@ -29,8 +29,71 @@ body {
   background-color: black;
   color: white; }
 
+.top div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.logo {
+  padding-bottom: 20px; }
+
 h1 {
   padding-bottom: 50px; }
+
+/*Styling for the Dropdown Button*/
+/* Dropdown Button */
+.dropbtn {
+  background-color: gray;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  margin-top: 50px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block; }
 
 .test-list {
   display: -webkit-box;
@@ -47,7 +110,7 @@ h1 {
       -ms-flex: 0 1 100%;
           flex: 0 1 100%; }
 
-.test-list li div {
+.test-list li a div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,62 +138,15 @@ h1 {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5); }
 
-.test-list li div img {
+.test-list li a div img {
   width: 100%;
   z-index: -2; }
 
-.test-list li div img {
-  width: 100%;
-  z-index: -2; }
-
-.test-list li div div p {
+.test-list li a div div p {
   position: absolute; }
 
 .articlePic {
   width: 300px; }
 
-/*For the Dropdown Button*/
-/* Dropdown Button */
-.dropbtn {
-  margin-left: 100px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer; }
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3e8e41; }
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block; }
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  margin-left: 100px;
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1; }
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block; }
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #f1f1f1; }
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-  display: block; }
+.loader {
+  display: none; }
