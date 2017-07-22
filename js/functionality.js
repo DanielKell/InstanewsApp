@@ -37,11 +37,15 @@ window.onclick = function(event) {
 // Declaring the variable that will be changed when a button is selected
   var newstype = "home";
 
+
+
   $('.dropdown-content a').on('click', function(){
     // var tmp = $(this).data('name');
     newstype = $(this).prop('id');
     console.log(newstype); 
     $('.loader').show();
+    $('.logo').css('width', '150px');
+    $('.logo').css('margin-top', '30px');
 
 var url = 'https://api.nytimes.com/svc/topstories/v2/'; 
 url += newstype + '.json?' + $.param({
@@ -49,7 +53,7 @@ url += newstype + '.json?' + $.param({
 });
 
 //Clear the contents before the data is requested.
- $('.test-list li').remove();
+ $('.news-list li').remove();
 
 
 $.ajax({
@@ -66,9 +70,9 @@ var imagesTrue = data.results.filter(function(imagesFilter) {
   console.log(data);
 
   $.each(imagesTrue, function(key, article) {
-  $('.test-list').append('<li>' 
+  $('.news-list').append('<li>' 
   + '<a href="' 
-  + article.url 
+  + article.url
   + '">'
   + '<div class="inside-wrapper">'
   // + '<img src="'
