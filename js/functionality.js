@@ -46,6 +46,7 @@ window.onclick = function(event) {
     $('.loader').show();
     $('.logo').css('width', '150px');
     $('.logo').css('margin-top', '30px');
+    $('.footer').css('position', 'relative');
 
 var url = 'https://api.nytimes.com/svc/topstories/v2/'; 
 url += newstype + '.json?' + $.param({

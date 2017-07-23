@@ -5,6 +5,7 @@
   * {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
+                    font-family: 'open_sanslight';
     }
 
 
@@ -13,6 +14,7 @@
     font-size: 16px;
     line-height: 22px;
     padding: 10px;
+    font-family: 'open_sanslight';
   }
   
   nav ul {
@@ -31,12 +33,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: auto;
+    
+
+      @media (min-width: 600px) {
+        // flex-direction: row;
+        // flex-wrap: wrap;
+      }
   }
 
   .top div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
   }
 
   .logo {
@@ -46,6 +55,7 @@
 
   h1 {
     padding-bottom: 15px;
+    font-family: 'open_sanslight';
   }
 
 /*Styling for the Dropdown Button*/
@@ -63,9 +73,6 @@
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    // position: relative;
-    // display: inline-block;
-    width: 120px;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -102,6 +109,7 @@
 
   .news {
     align-self: stretch;
+    width: 100%;
   }
 
   .news-list {
@@ -130,7 +138,7 @@
   .news-list li a div{
     display: flex;
     justify-content: center;
-    height: 300px;
+    height: 400px;
     position: relative;
     /*background-color: red;*/
   }
@@ -173,4 +181,13 @@
   // For the loader
   .loader {
     display: none;
+    width: 150px;
+  }
+
+  .footer {
+    width: 225px;
+    padding-top: 100px;
+    color: #c2c2c2;
+    position: absolute;
+    bottom: 50px;
   }
