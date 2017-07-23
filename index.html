@@ -14,11 +14,11 @@
    
    <body>
        <section class="top">
-           <div>
+           <div class="logo-container">
              <img class="logo" src="assets/images/nyt-logo.svg">
            </div>
 
-            <div class="dropdown">
+            <!--<div class="dropdown">
                 <h1> Choose a section: </h1>
                 <button class="dropbtn">Sections ... ↕</button>
                 <div id="myDropdown" class="dropdown-content">
@@ -29,7 +29,18 @@
                     <a href="#" id="technology">Technology</a>
                     <a href="#" id="fashion">Fashion</a>
                 </div>
-            </div>
+            </div>-->
+
+                      <p>Choose a selection:</p>
+          <select name="select" id="category" autofocus="true"> 
+            <option value="" disabled selected hidden>Sections...</option> 
+            <option value="home">Home</option>
+            <option value="opinion">Opinion</option>
+            <option value="national">National</option>
+            <option value="politics">Politics</option>
+            <option value="upshot">Upshot</option>
+            <option value="nyregion">NY region</option>
+          </select>
        </section>
 
 

@@ -44,11 +44,36 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   height: auto; }
+  @media (min-width: 1000px) {
+    body {
+      -webkit-box-align: left;
+          -ms-flex-align: left;
+              align-items: left; } }
 
-.logo {
-  padding-bottom: 20px;
+@media (min-width: 600px) {
+  .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.top .logo-container {
   -webkit-transition: all .5s ease-out .5s;
-  transition: all .5s ease-out .5s; }
+  transition: all .5s ease-out .5s;
+  margin-bottom: 1rem;
+  margin-right: 0rem; }
+  @media (min-width: 600px) {
+    .top .logo-container {
+      margin-right: 1rem;
+      margin-bottom: 0rem; } }
+
+@media (min-width: 600px) {
+  .logo {
+    width: 20vw;
+    height: 30vh; } }
+
+@media (min-width: 1000px) {
+  .logo {
+    height: 200px; } }
 
 h1 {
   padding-bottom: 15px;
@@ -81,6 +106,11 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  @media (min-width: 600px) {
+    .dropdown {
+      -webkit-box-align: left;
+          -ms-flex-align: left;
+              align-items: left; } }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -129,18 +159,16 @@ h1 {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 100%;
           flex: 0 1 100%; }
-
-@media (min-width: 600px) {
-  .news-list li {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%; } }
-
-@media (min-width: 1000px) {
-  .news-list li {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 25%;
-            flex: 0 1 25%; } }
+  @media (min-width: 600px) {
+    .news-list li {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 50%;
+              flex: 0 1 50%; } }
+  @media (min-width: 1000px) {
+    .news-list li {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 25%;
+              flex: 0 1 25%; } }
 
 .news-list li a div {
   display: -webkit-box;
@@ -191,3 +219,7 @@ h1 {
   color: #c2c2c2;
   position: absolute;
   bottom: 50px; }
+  @media (min-width: 1000px) {
+    .footer {
+      padding-left: 35px;
+      width: 300px; } }

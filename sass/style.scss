@@ -37,20 +37,41 @@
     
 
       @media (min-width: 600px) {
-        // flex-direction: row;
-        // flex-wrap: wrap;
+        //align-items: left;
+      }
+
+      @media (min-width: 1000px) {
+        align-items: left;
       }
   }
 
-  .top div {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
+  .top {
+
+    @media (min-width: 600px) {
+      display: flex;
+    }
+
+    .logo-container { //WHY WON'T THIS WORK???
+      transition: all .5s ease-out .5s;
+      margin-bottom: 1rem;
+      margin-right: 0rem;
+
+      @media (min-width: 600px) {
+        margin-right: 1rem;
+        margin-bottom: 0rem;
+      }
+    }
   }
 
   .logo {
-    padding-bottom: 20px;
-    transition: all .5s ease-out .5s;
+    @media (min-width: 600px) {
+      width: 20vw;
+      height: 30vh;
+    }
+
+    @media (min-width: 1000px) {
+      height: 200px;
+    }
   }
 
   h1 {
@@ -78,6 +99,10 @@
     justify-content: center;
     margin-bottom: 30px;
     flex-direction: column;
+
+    @media (min-width: 600px) {
+      align-items: left;
+    }
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -127,16 +152,12 @@
   .news-list li {
     max-width: 100%;
     flex: 0 1 100%;
-  }
 
-  @media (min-width: 600px) {
-    .news-list li {
+    @media (min-width: 600px) {
       flex: 0 1 50%;
     }
-  }
 
     @media (min-width: 1000px) {
-    .news-list li {
       flex: 0 1 25%;
     }
   }
@@ -197,4 +218,9 @@
     color: #c2c2c2;
     position: absolute;
     bottom: 50px;
+
+    @media (min-width: 1000px) {
+      padding-left: 35px;
+      width: 300px;
+    }
   }
