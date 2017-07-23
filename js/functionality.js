@@ -44,6 +44,7 @@ window.onclick = function(event) {
     newstype = $(this).prop('id');
     console.log(newstype); 
     $('.loader').show();
+    //$('.loader').css('display', 'block');
     $('.logo').css('width', '150px');
     $('.logo').css('margin-top', '30px');
     $('.footer').css('position', 'relative');
