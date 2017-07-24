@@ -6,6 +6,20 @@ a {
   color: red;
   text-decoration: none; }
 
+.footer {
+  width: 225px;
+  padding-top: 100px;
+  color: #c2c2c2;
+  position: absolute;
+  bottom: 50px; }
+  .footer h2 {
+    font-family: 'open_sans';
+    font-weight: 300; }
+  @media (min-width: 1000px) {
+    .footer {
+      padding-left: 35px;
+      width: 300px; } }
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -70,15 +84,6 @@ p {
     .top .logo {
       height: 200px; } }
 
-h1 {
-  padding-bottom: 15px;
-  font-family: 'open_sans';
-  font-weight: 300; }
-
-h2 {
-  font-family: 'open_sans';
-  font-weight: 300; }
-
 /*Styling for the Dropdown Button*/
 .dropdown {
   -webkit-box-align: center;
@@ -95,6 +100,10 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 30px; }
+  .dropdown h1 {
+    padding-bottom: 15px;
+    font-family: 'open_sans';
+    font-weight: 300; }
   @media (min-width: 600px) {
     .dropdown {
       -webkit-box-align: left;
@@ -182,22 +191,7 @@ select#category {
 .story-content:hover p {
   display: block; }
 
-.news-list li a div img {
-  width: 100%;
-  z-index: -2; }
-
 .loader {
   display: none;
   width: 50px;
   margin: auto; }
-
-.footer {
-  width: 225px;
-  padding-top: 100px;
-  color: #c2c2c2;
-  position: absolute;
-  bottom: 50px; }
-  @media (min-width: 1000px) {
-    .footer {
-      padding-left: 35px;
-      width: 300px; } }

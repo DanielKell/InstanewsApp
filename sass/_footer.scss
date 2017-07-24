@@ -1,0 +1,17 @@
+  .footer {
+    width: 225px;
+    padding-top: 100px;
+    color: $footer-color;
+    position: absolute;
+    bottom: 50px;
+
+    h2 {
+      font-family: 'open_sans';
+      font-weight: 300;
+    }
+
+    @media (min-width: $desktop-width) {
+      padding-left: 35px;
+      width: 300px;
+    }
+  }

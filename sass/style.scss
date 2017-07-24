@@ -1,5 +1,6 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
+@import 'footer';
 
 //Import the rest of the partials up here, in the order that Jim slacked out on July 20
   * {
@@ -65,21 +66,8 @@
         height: 200px;
       }
     }
-
-
   }
 
-
-  h1 {
-    padding-bottom: 15px;
-    font-family: 'open_sans';
-    font-weight: 300;
-  }
-
-  h2 {
-    font-family: 'open_sans';
-    font-weight: 300;
-  }
 
 /*Styling for the Dropdown Button*/
 
@@ -89,6 +77,12 @@
     justify-content: center;
     flex-direction: column;
     margin-bottom: 30px;
+
+    h1 {
+      padding-bottom: 15px;
+      font-family: 'open_sans';
+      font-weight: 300;
+    }
 
     @media (min-width: $tablet-width) {
       align-items: left;
@@ -180,11 +174,6 @@
     display: block;
   }
 
-  .news-list li a div img{
-    width: 100%;
-    z-index: -2;
-  }
-
   // For the loader
   .loader {
     display: none;
@@ -192,15 +181,4 @@
     margin: auto;
   }
 
-  .footer {
-    width: 225px;
-    padding-top: 100px;
-    color: $footer-color;
-    position: absolute;
-    bottom: 50px;
-
-    @media (min-width: $desktop-width) {
-      padding-left: 35px;
-      width: 300px;
-    }
-  }
+  // Footer styling is in sass/_footer.scss

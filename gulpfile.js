@@ -14,16 +14,10 @@ var uglify = require('gulp-uglify'),
 
 //Gulp Script Tasks
     gulp.task("scripts", ['lint'], function() {
-        gulp.src("./js/*.js") //Change this if I move js files into a JS folder
+        gulp.src("./js/*.js") 
         .pipe(uglify()) //Call the uglify function
         .pipe(rename( {extname: ".min.js"} ))
         .pipe(gulp.dest("./build/js"))
-    
-    });
-
-    // Say Hello
-    gulp.task("sayHello", function() {
-        console.log("hello!");
     });
 
     // BrowserSync
@@ -33,7 +27,7 @@ var uglify = require('gulp-uglify'),
                 baseDir: "./"
             }
         });
-        gulp.watch(["./build/*.js", "index.html"]).on("change", browserSync.reload); //These are the files I'm watching
+        gulp.watch(["./build/js/*.js", "index.html"]).on("change", browserSync.reload); //These are the files I'm watching
     });
 
     //Sass etc on the source file. Output pretty errors, process sass, 
@@ -68,7 +62,4 @@ var uglify = require('gulp-uglify'),
     }); // Change this into pipe later 
 
     //Run all the gulp tasks when you "Gulp" in cmd
-    gulp.task('default', ["sayHello", "scripts", "watch", "browser-sync", "lint", 'sass']);
-
-
- 
+    gulp.task('default', ["scripts", "watch", "browser-sync", "lint", 'sass']);
