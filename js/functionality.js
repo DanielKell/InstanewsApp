@@ -34,19 +34,17 @@ window.onclick = function(event) {
 // There IS an image (aka it's != null) then proceed and go through the objects. If there is an image
 // increment a counter by 1 and 
 
-// Declaring the variable that will be changed when a button is selected
-  var newstype = "home";
 
-
-
-  $('.dropdown-content a').on('click', function(){
+  $('#category').on('change', function(){
     // var tmp = $(this).data('name');
-    newstype = $(this).prop('id');
+    var newstype = $('#category').val();
+    //newstype = $(this).prop('id');
     console.log(newstype); 
     $('.loader').show();
     $('.logo').css('width', '150px');
     $('.logo').css('margin-top', '30px');
     $('.footer').css('position', 'relative');
+    $('.top').addClass('top-populated');
 
 var url = 'https://api.nytimes.com/svc/topstories/v2/'; 
 url += newstype + '.json?' + $.param({

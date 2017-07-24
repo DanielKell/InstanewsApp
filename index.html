@@ -4,7 +4,7 @@
       <meta charset="utf-8"> <!-- Use autoprefixer before finishing: https://autoprefixer.github.io/ -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="reset.css"> 
-      <!--<link rel="stylesheet" href="fonts/fonts.css"> --> 
+      <link rel="stylesheet" href="fonts/fonts.css">  
       <link rel="stylesheet" href="build/css/style.min.css">
       <title>🔍Instanews App🔎</title>
       <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
@@ -12,8 +12,9 @@
       
    </head>
    
-   <body>
-       <section class="top">
+   <body class="main-body">
+       <section class="top"> 
+
            <div class="logo-container">
              <img class="logo" src="assets/images/nyt-logo.svg">
            </div>
@@ -31,21 +32,19 @@
                 </div>
             </div>-->
 
-                      <p>Choose a selection:</p>
+        <div class="dropdown">
+          <h1>Choose a section:</h1>
           <select name="select" id="category" autofocus="true"> 
             <option value="" disabled selected hidden>Sections...</option> 
             <option value="home">Home</option>
-            <option value="opinion">Opinion</option>
-            <option value="national">National</option>
-            <option value="politics">Politics</option>
-            <option value="upshot">Upshot</option>
-            <option value="nyregion">NY region</option>
+            <option value="arts">Arts</option>
+            <option value="business">Business</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Technology</option>
+            <option value="fashion">Fashion</option>
           </select>
+        </div>
        </section>
-
-
-
-       
 
 
 <!--<select name="" id="">
