@@ -12,7 +12,7 @@
 
   p {
     color: white;
-    font-size: 16px;
+    font-size: $standard-font-size;
     line-height: 22px;
     padding: 10px;
     font-family: 'open_sans';
@@ -28,20 +28,16 @@
     align-items: center;
     justify-content: center;
     height: auto;
-    
 
-      @media (min-width: 600px) {
-        //align-items: left;
-      }
-
-      @media (min-width: 1000px) {
+      @media (min-width: $desktop-width) {
         align-items: left;
       }
   }
 
+
   .top {
 
-    @media (min-width: 600px) {
+    @media (min-width: $tablet-width) {
       display: flex;
     }
 
@@ -50,23 +46,29 @@
       margin-bottom: 1rem;
       margin-right: 0rem;
 
-      @media (min-width: 600px) {
+      @media (min-width: $tablet-width) {
         margin-right: 1rem;
         margin-bottom: 0rem;
       }
     }
-  }
 
-  .logo {
-    @media (min-width: 600px) {
-      width: 20vw;
-      height: 30vh;
+    .logo {
+
+    margin-top: 30px;
+
+      @media (min-width: $tablet-width) {
+        width: 20vw;
+        height: 25vh;
+      }
+
+      @media (min-width: $desktop-width) {
+        height: 200px;
+      }
     }
 
-    @media (min-width: 1000px) {
-      height: 200px;
-    }
+
   }
+
 
   h1 {
     padding-bottom: 15px;
@@ -85,18 +87,38 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
     flex-direction: column;
+    margin-bottom: 30px;
 
-    @media (min-width: 600px) {
+    @media (min-width: $tablet-width) {
       align-items: left;
+      margin-bottom: 0px;
     }
 }
 
   select#category {
     height: 25px;
     width: 125px;
-    font-size: 16px;
+    font-size: $standard-font-size;
+  }
+
+  //This class gets loader AFTER the stories are loaded.
+  .main-body-populated {
+
+    @media (min-width: $tablet-width) {
+      align-items: left;
+    }
+
+    .top .logo-container .logo {
+      width: 150px;
+
+    @media (min-width: $tablet-width) {
+      align-items: left;
+      width: 100px;
+      margin-top: 0px;
+      padding-left: 30px;
+      }
+    }
   }
 
 //Styling for the list items!
@@ -104,25 +126,26 @@
   .news {
     align-self: stretch;
     width: 100%;
-  }
 
-  .news-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    .news-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+   }
   }
 
   .news-list li {
     max-width: 100%;
     flex: 0 1 100%;
 
-    @media (min-width: 600px) {
+    @media (min-width: $tablet-width) {
       flex: 0 1 50%;
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width: $desktop-width) {
       flex: 0 1 25%;
     }
+
   }
 
   .news-list li a div{
@@ -130,7 +153,6 @@
     justify-content: center;
     height: 400px;
     position: relative;
-    /*background-color: red;*/
   }
 
   .article {
@@ -143,28 +165,24 @@
 
   .story-content {
     width: 100%;
+
+    p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
+    }
   }
 
-  .story-content p {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-        background-color: rgba(0,0,0,0.5);
+  // When hovering over a news block, display the text. Otherwise it is hidden.
+  .story-content:hover p {
+    display: block;
   }
 
   .news-list li a div img{
     width: 100%;
     z-index: -2;
-  }
-
-  .news-list li a div div p { //Should be able to get rid of this?
-    position: absolute;
-  }
-
-  // For the pulled images
-
-  .articlePic {
-    width: 300px;
   }
 
   // For the loader
@@ -177,11 +195,11 @@
   .footer {
     width: 225px;
     padding-top: 100px;
-    color: #c2c2c2;
+    color: $footer-color;
     position: absolute;
     bottom: 50px;
 
-    @media (min-width: 1000px) {
+    @media (min-width: $desktop-width) {
       padding-left: 35px;
       width: 300px;
     }

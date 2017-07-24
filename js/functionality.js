@@ -24,10 +24,10 @@ window.onclick = function(event) {
 
 // Triggering button press for dropdown menu
 
-  $('button').on('click', function() {
-    event.preventDefault();
-    myFunction();
-  });
+  // $('button').on('click', function() {
+  //   event.preventDefault();
+  //   myFunction();
+  // });
 
 
 //To pull back just 12 items, and skip the ones with no image set up a for loop and check whether 
@@ -39,12 +39,10 @@ window.onclick = function(event) {
     // var tmp = $(this).data('name');
     var newstype = $('#category').val();
     //newstype = $(this).prop('id');
-    console.log(newstype); 
+    //console.log(newstype); 
     $('.loader').show();
-    $('.logo').css('width', '150px');
-    $('.logo').css('margin-top', '30px');
     $('.footer').css('position', 'relative');
-    $('.top').addClass('top-populated');
+    $('.main-body').addClass('main-body-populated');
 
 var url = 'https://api.nytimes.com/svc/topstories/v2/'; 
 url += newstype + '.json?' + $.param({
@@ -58,7 +56,9 @@ url += newstype + '.json?' + $.param({
 $.ajax({
   url: url,
   method: 'GET',
-}).done(function(data) {
+})
+
+ .done(function(data) {
 
 var imagesTrue = data.results.filter(function(imagesFilter) {
   return imagesFilter.multimedia.length > 0;
@@ -87,9 +87,11 @@ var imagesTrue = data.results.filter(function(imagesFilter) {
   // Or do something like Contents += '<li>' AND += 'Title: ' AND += 'article.abstract' etc
 })
 
-}).fail(function(err) {
+})
+  .fail(function(err) {
   throw err; //Define what this error is 
-}).always(function() { //Hide the loader button here; show it on the onclick.
+})
+  .always(function() { //Hide the loader button here; show it on the onclick.
   $('.loader').hide();
 });
 
