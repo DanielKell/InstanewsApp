@@ -10,8 +10,8 @@
       font-weight: 300;
     }
 
-    @media (min-width: $desktop-width) {
-      padding-left: 35px;
-      width: 300px;
+      @include desktop-settings {
+        padding-left: 35px;
+        width: 300px;
     }
   }

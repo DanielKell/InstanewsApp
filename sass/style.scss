@@ -1,15 +1,13 @@
+@import 'reset';
 @import 'variables';
 @import 'mixins';
 @import 'footer';
 
-//Import the rest of the partials up here, in the order that Jim slacked out on July 20
   * {
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-                    font-family: 'open_sans';
-                    font-weight: 300;
-    }
-
+    box-sizing: border-box;
+    font-family: 'open_sans';
+    font-weight: 300;
+  }
 
   p {
     color: white;
@@ -30,24 +28,24 @@
     justify-content: center;
     height: auto;
 
-      @media (min-width: $desktop-width) {
+      @include desktop-settings {
         align-items: left;
       }
   }
 
-
+  //Styling for the logo and buttons
   .top {
 
-    @media (min-width: $tablet-width) {
+      @include tablet-settings {
       display: flex;
     }
 
-    .logo-container { //WHY WON'T THIS WORK???
+    .logo-container { //Could not get the transition to take effect on media query change
       transition: all .5s ease-out .5s;
       margin-bottom: 1rem;
       margin-right: 0rem;
 
-      @media (min-width: $tablet-width) {
+      @include tablet-settings {
         margin-right: 1rem;
         margin-bottom: 0rem;
       }
@@ -55,14 +53,14 @@
 
     .logo {
 
-    margin-top: 30px;
+      margin-top: 30px;
 
-      @media (min-width: $tablet-width) {
+      @include tablet-settings {
         width: 20vw;
         height: 25vh;
       }
 
-      @media (min-width: $desktop-width) {
+      @include desktop-settings {
         height: 200px;
       }
     }
@@ -71,7 +69,7 @@
 
 /*Styling for the Dropdown Button*/
 
-.dropdown {
+  .dropdown {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -84,11 +82,11 @@
       font-weight: 300;
     }
 
-    @media (min-width: $tablet-width) {
-      align-items: left;
-      margin-bottom: 0px;
+      @include tablet-settings {
+        align-items: left;
+        margin-bottom: 0px;
     }
-}
+  }
 
   select#category {
     height: 25px;
@@ -99,18 +97,18 @@
   //This class gets loader AFTER the stories are loaded.
   .main-body-populated {
 
-    @media (min-width: $tablet-width) {
-      align-items: left;
-    }
+      @include tablet-settings {
+        align-items: left;
+      }
 
-    .top .logo-container .logo {
-      width: 150px;
+      .top .logo-container .logo {
+        width: 150px;
 
-    @media (min-width: $tablet-width) {
-      align-items: left;
-      width: 100px;
-      margin-top: 0px;
-      padding-left: 30px;
+      @include tablet-settings {
+        align-items: left;
+        width: 100px;
+        margin-top: 0px;
+        padding-left: 30px;
       }
     }
   }
@@ -125,18 +123,18 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-   }
+    }
   }
 
   .news-list li {
     max-width: 100%;
     flex: 0 1 100%;
 
-    @media (min-width: $tablet-width) {
+      @include tablet-settings {
       flex: 0 1 50%;
     }
 
-    @media (min-width: $desktop-width) {
+      @include desktop-settings {
       flex: 0 1 25%;
     }
 
@@ -174,7 +172,7 @@
     display: block;
   }
 
-  // For the loader
+  // For the loader image
   .loader {
     display: none;
     width: 50px;
