@@ -1,8 +1,12 @@
+//Importing files to be used in this main styling file with Sass
+
 @import 'reset';
 @import 'variables';
 @import 'mixins';
 @import 'footer';
 
+
+  //General styling for page
   * {
     box-sizing: border-box;
     font-family: 'open_sans';
@@ -94,7 +98,7 @@
     font-size: $standard-font-size;
   }
 
-  //This class gets loader AFTER the stories are loaded.
+  //This class gets loader AFTER the stories are loaded. These styles override original .main-body elements
   .main-body-populated {
 
       @include tablet-settings {
@@ -113,8 +117,7 @@
     }
   }
 
-//Styling for the list items!
-
+  //Styling for the list items
   .news {
     align-self: stretch;
     width: 100%;
