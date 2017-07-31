@@ -1,20 +1,26 @@
 // Requiring packages
-var gulp = require('gulp');
+const gulp = require('gulp');
 
-var uglify = require('gulp-uglify'),
+const uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     watch = require("gulp-watch"),
     browserSync = require("browser-sync").create(),
     eslint = require('gulp-eslint'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
-    rename = require("gulp-rename"),
     sass = require('gulp-sass'),
-    prettyError = require('gulp-prettyerror');
+    prettyError = require('gulp-prettyerror'),
+    babel = require('gulp-babel');
+
+//Gulp Babel
+
 
 //Gulp Script Tasks
     gulp.task("scripts", ['lint'], function() {
         gulp.src("./js/*.js") 
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(uglify()) //Call the uglify function
         .pipe(rename( {extname: ".min.js"} ))
         .pipe(gulp.dest("./build/js"))
@@ -62,4 +68,4 @@ var uglify = require('gulp-uglify'),
     }); // Change this into pipe later 
 
     //Run all the gulp tasks when you "Gulp" in cmd
-    gulp.task('default', ["scripts", "watch", "browser-sync", "lint", 'sass']);
+    gulp.task('default', ["scripts", "watch", "browser-sync", 'sass']);

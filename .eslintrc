@@ -1,5 +1,6 @@
 {
   "extends": "eslint:recommended",
+  "parser": "babel-eslint",
   "rules": { //Put all rules that we want to throw a warning if we don't do these
     "no-alert": 1,
     "camelcase": 1,
