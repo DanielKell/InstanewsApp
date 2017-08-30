@@ -1,0 +1,60 @@
+//Styling for the logo and buttons
+  .top {
+
+      @include tablet-settings {
+      display: flex;
+    }
+
+    .logo-container { //Could not get the transition to take effect on media query change
+      transition: all .5s ease-out .5s;
+      margin-bottom: 1rem;
+      margin-right: 0rem;
+
+      @include tablet-settings {
+        margin-right: 1rem;
+        margin-bottom: 0rem;
+      }
+    }
+
+    .logo {
+
+      margin-top: 30px;
+
+      @include tablet-settings {
+        width: 20vw;
+        height: 25vh;
+      }
+
+      @include desktop-settings {
+        height: 200px;
+      }
+    }
+  }
+
+
+/*Styling for the Dropdown Button*/
+
+  .dropdown {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    h1 {
+      padding-bottom: 15px;
+      font-family: 'open_sans';
+      font-weight: 300;
+    }
+
+      @include tablet-settings {
+        align-items: left;
+        margin-bottom: 0px;
+    }
+  }
+
+  select#category {
+    height: 25px;
+    width: 125px;
+    font-size: $standard-font-size;
+  }

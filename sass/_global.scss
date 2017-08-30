@@ -1,0 +1,30 @@
+//General styling for page
+  * {
+    box-sizing: border-box;
+    font-family: 'open_sans';
+    font-weight: 300;
+  }
+
+  p {
+    color: white;
+    font-size: $standard-font-size;
+    line-height: 22px;
+    padding: 10px;
+    font-family: 'open_sans';
+    font-weight: 300;
+  }
+
+  .main-body {
+    max-width: 100%;
+    background-color: black;
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+
+      @include desktop-settings {
+        align-items: left;
+      }
+  }
