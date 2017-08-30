@@ -4,14 +4,15 @@
     color: $footer-color;
     position: absolute;
     bottom: 50px;
-
     h2 {
       font-family: 'open_sans';
       font-weight: 300;
+      span {
+        text-transform: uppercase;
+      }
     }
-
-      @include desktop-settings {
-        padding-left: 35px;
-        width: 300px;
+    @include desktop-settings {
+      padding-left: 35px;
+      width: 300px;
     }
   }

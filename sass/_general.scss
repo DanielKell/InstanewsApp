@@ -1,0 +1,69 @@
+//This class gets loaded AFTER the stories are loaded. These styles override original .main-body elements
+.main-body-populated {
+  @include tablet-settings {
+    align-items: left;
+  }
+  .top .logo-container .logo {
+    width: 150px;
+    @include tablet-settings {
+      align-items: left;
+      width: 100px;
+      margin-top: 0px;
+      padding-left: 30px;
+    }
+  }
+} //Styling for the list items
+.news {
+  align-self: stretch;
+  width: 100%;
+  .news-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.news-list li {
+  max-width: 100%;
+  flex: 0 1 100%;
+  @include tablet-settings {
+    flex: 0 1 50%;
+  }
+  @include desktop-settings {
+    flex: 0 1 25%;
+  }
+}
+
+.news-list li a div {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  position: relative;
+}
+
+.article {
+  display: block;
+  width: 100%;
+  height: 400px;
+  background-position: 35%;
+  background-size: cover;
+}
+
+.story-content {
+  width: 100%;
+  p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+} // When hovering over a news block, display the text. Otherwise it is hidden.
+.story-content:hover p {
+  display: block;
+} // For the loader image
+.loader {
+  display: none;
+  width: 50px;
+  margin: auto;
+}
