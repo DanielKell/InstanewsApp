@@ -33,24 +33,6 @@ $(document).ready(() => {
     }).slice(0,12); 
 
     //pulling data for each of the filtered elements and creating new data structures to hold the data in the .news-list class
-
-  //   $.each(imagesTrue, (key, article) => {
-  //   $('.news-list').append('<li>' 
-  //   + '<a href="' 
-  //   + article.url
-  //   + '">'
-  //   + '<div class="inside-wrapper">'
-  //   + '<div class="article" style="background-image:url(' + article.multimedia[4].url + ')">'
-  //   + '<div class="story-content">'
-  //   + '<p>'
-  //   + article.abstract
-  //   + '</p>'
-  //   + '</div>'
-  //   + '</div>'
-  //   + '</div>'
-  //   + '</a>'
-  //   + '</li>');
-  // })
   
       $.each(imagesTrue, (key, article) => {
     $('.news-list').append(`<li> <a href="${article.url}"> <div class="inside-wrapper"> <div class="article" style="background-image:url(${article.multimedia[4].url})"> <div class="story-content"> <p>${article.abstract}</p></div></div></div></a></li>`);
